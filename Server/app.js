@@ -4,7 +4,8 @@ const mongoose = require('mongoose')
 const studentsRouter = require('./routes/students')
 
 
-const url = 'mongodb://localhost:27017/'
+//const url = 'mongodb://localhost:27017/'
+const url = 'mongodb://127.0.0.1:27020,127.0.0.1:27021,127.0.0.1:27022/cbitit3?replicaSet=m101';
 const app = express()
 mongoose.connect(url)
 const con = mongoose.connection
@@ -21,6 +22,6 @@ app.use('/students',studentsRouter)
 app.listen(9000, () =>
 {
 console.log('Server started')
-console.log('Server started')
+
 })
 
